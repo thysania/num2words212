@@ -22,7 +22,7 @@ from .lang_EU import Num2Word_EU
 
 class Num2Word_FR(Num2Word_EU):
     CURRENCY_FORMS = {
-        'EUR': (('euro', 'euros'), ('centime', 'centimes')),
+        'EUR': (('euro', 'euros'), ('centime##', 'centimes##')),
         'USD': (('dollar', 'dollars'), ('cent', 'cents')),
         'FRF': (('franc', 'francs'), ('centime', 'centimes')),
         'GBP': (('livre', 'livres'), ('penny', 'pence')),
@@ -104,7 +104,7 @@ class Num2Word_FR(Num2Word_EU):
 
     def to_currency(self, val, currency='EUR', cents=True, separator=' et',
                     adjective=False):
-        result = super(Num2Word_FR, self).to_currency(
+        result = "##"+super(Num2Word_FR, self).to_currency(
             val, currency=currency, cents=cents, separator=separator,
             adjective=adjective)
         return result
